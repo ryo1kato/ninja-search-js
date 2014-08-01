@@ -1,3 +1,11 @@
+== 0.1.0 2014-08-01
+
+* Forked from https://github.com/drnic/ninja-search-js
+  * Now it works for dynamic contents too.
+  * Adjust width if margin is tight
+  * Add '/' shortcut key to activate search
+  * jQuery is updated to 1.9.1
+
 == 0.0.1 2009-06-05
 
 * 1 major enhancement:

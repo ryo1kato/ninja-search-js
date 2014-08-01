@@ -1,5 +1,5 @@
 Ninja Search JS - the Greasemonkey Script
---------------------------------------
+------------------------------------------
 
 Description
 ===========
@@ -8,14 +8,24 @@ Do long drop down lists make you want to send out an assassin and hunt down web 
 
 Ninja Search JS - the Greasemonkey Script (aka ninja-search-js) converts all nasty, long drop down lists into autocompleteable text fields; and then then snap back into their drop down list form when you've selected an item.
 
-See the [home page](http://drnic.github.com/ninja-search-js/) for more information, a demo, and the downloadable Greasemonkey/GreaseKit script.
+This is a forked version. Original version can be found [here](http://drnic.github.com/ninja-search-js/)
 
-Ok, let's put the [installer script here](http://drnic.github.com/ninja-search-js/dist/ninja-search.user.js) too.
 
-Author
-======
+TODOs and Unknown Issues
+=======================
+* Makefile is temporarily used to generate ninja-search-js.user.js
+* Icon URL is hardcoded to use https://raw.githubusercontent.com
+* Need to cleanup unused files.
+* Haven't tested tests - probably broken.
 
+
+Authors
+=======
+
+[Ryoichi KATO](http://github.com/ryo1kato/)
 [Dr Nic Williams](http://drnicwilliams)
+
+
 
 Ninja Search icon
 =================
@@ -32,6 +42,7 @@ Sponsored by [Mocra](http://mocra.com/), the Premier Rails/iPhone consultancy
 License
 =======
 
+Copyright (c) 2014 Ryoichi KATO
 Copyright (c) 2009 Dr Nic Williams, Mocra
 
 Permission is hereby granted, free of charge, to any person obtaining
