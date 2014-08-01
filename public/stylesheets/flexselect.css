@@ -40,8 +40,8 @@
 
 a.ninja_search_activation {
   display: inline-block;
-  width: 22px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background: url(https://raw.githubusercontent.com/ryo1kato/ninja-search-js/master/public/images/ninja_search.png) no-repeat;
   text-indent: -9001px;
   text-align: left;

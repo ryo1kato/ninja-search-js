@@ -5,14 +5,12 @@ function toggle_flexfield(selectId){
     var selectField = $('#' + selectId);
     var flexField = $('input#' + selectId + '_flexselect');
     if (flexField.size() == 0) {
-        var width = selectField.outerWidth();
-        console.log(width)
+        var selectOuterWidth = selectField.outerWidth(true);
         selectField.flexselect();
         var flexField = $('input#' + selectId + '_flexselect');
-        width -= parseInt(flexField.css("border-left-width"));
-        width -= parseInt(flexField.css("border-right-width"));
-        console.log(width)
-        flexField.width( width ).click().val('').focus();
+        flexOuterWidth= flexField.outerWidth(true);
+        flexwidth = flexField.width() - (flexOuterWidth - selectOuterWidth);
+        flexField.width( flexwidth ).click().val('').focus();
     } else {
         flexField.remove();
         $('#' + selectId + '_flexselect_dropdown').remove();
@@ -29,15 +27,19 @@ function apply_ninja() { $('select').each(function(index) {
     // if <select> has no id attribute, then give it one based on name attribute
     var id = $(this).attr('id');
     if (id == null || id.length == 0 || $('select[id=' + id + ']').size() > 1) {
-      var baseid = (id == null || id.length == 0) ? 
-        $(this).attr('name').replace(/\[/,'-').replace(/\]/,'') : id;
-      id = baseid;
-      var uniqueCounter = 0;
-      while ($('select[id=' + id + ']').size() > 0) {
-        uniqueCounter += 1;
-        id = baseid + "-" + uniqueCounter;
-      }
-      $(this).attr('id', id);
+        if (id == null || id.length == 0) {
+            baseid = 'ninja_search';
+        } 
+        else {
+            baseid = id
+        }
+        id = baseid
+        var uniqueCounter = 0;
+        while ($('select[id=' + id + ']').size() > 0) {
+            uniqueCounter += 1;
+            id = baseid + "-" + uniqueCounter;
+        }
+        $(this).attr('id', id);
     }
 
     // create the Ninja Search button, with rel attribute referencing
@@ -47,8 +49,8 @@ function apply_ninja() { $('select').each(function(index) {
         btn = $('<a class="ninja_search_activation" rel="' + id + '">ninja search</a>')
                        .insertAfter($(this))
 
-        if ( btn_margin < btn.width() ) {
-            $(this).width( $(this).width() - btn.width() );
+        if ( btn_margin < btn.outerWidth() ) {
+            $(this).width( $(this).width() - btn.outerWidth() );
         }
 
         // register onclick handler
